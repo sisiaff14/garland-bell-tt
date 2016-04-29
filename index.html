@@ -14,9 +14,9 @@
 		<h1>
 			<span id="time"></span>
 			<span id="options">
-				<img src="http://static.inven.co.kr/image_2011/ff14/dataninfo/bell/AlarmActive.png" id="alarm-toggle" class="active">
-				<img src="http://static.inven.co.kr/image_2011/ff14/dataninfo/bell/Flat.png" id="mode-toggle">
-				<img src="http://static.inven.co.kr/image_2011/ff14/dataninfo/bell/Setting.png" id="settings-toggle">
+				<img src="./static/AlarmActive.png" id="alarm-toggle" class="active">
+				<img src="./static/Flat.png" id="mode-toggle">
+				<img src="./static/Setting.png" id="settings-toggle">
 			</span>
 		</h1>
 
@@ -85,12 +85,12 @@
 			</div>
 
 			<div class="subheader">클래스</div>
-			<div data-filter=".miner" data-invert="0" class="active filter button"><img src="http://static.inven.co.kr/image_2011/ff14/dataninfo/bell/MIN-Transparent.png">광부</div>
-			<div data-filter=".botanist" data-invert="0" class="active filter button"><img src="http://static.inven.co.kr/image_2011/ff14/dataninfo/bell/BTN-Transparent.png">원예가</div>
-			<div data-filter=".fish" data-invert="0" class="active filter button"><img src="http://static.inven.co.kr/image_2011/ff14/dataninfo/bell/FIS-Transparent.png">어부</div>
+			<div data-filter=".miner" data-invert="0" class="active filter button"><img src="./static/MIN-Transparent.png">광부</div>
+			<div data-filter=".botanist" data-invert="0" class="active filter button"><img src="./static/BTN-Transparent.png">원예가</div>
+			<div data-filter=".fish" data-invert="0" class="active filter button"><img src="./static/FIS-Transparent.png">어부</div>
 			<div class="subheader">기타</div>
-			<div data-filter=".GATE" data-invert="0" class="filter button"><img src="http://static.inven.co.kr/image_2011/ff14/dataninfo/bell/GATE.png">골드소서</div>
-			<div data-filter=".hunt" data-invert="0" class="active filter button"><img src="http://static.inven.co.kr/image_2011/ff14/dataninfo/bell/Hunt.png">마물사냥</div>
+			<div data-filter=".GATE" data-invert="0" class="filter button"><img src="./static/GATE.png">골드소서</div>
+			<div data-filter=".hunt" data-invert="0" class="active filter button"><img src="./static/Hunt.png">마물사냥</div>
 		</div>
 		<div id="node-stats" class="deemphasize"></div>
 				<div class="header"><a href="index_exp.php" target="_blank">어부 확장 타이머 바로가기</a></div>
@@ -138,14 +138,14 @@
 			<div class="content">
 				{{~it.node.items :entry:itemIndex}}
 					<a class="entry">
-						<img src="http://static.inven.co.kr/image_2011/ff14/dataninfo/bell/{{=entry.icon}}.png" class="icon">
+						<img src="./static-icon/{{=entry.icon}}.png" class="icon">
 						{{?entry.slot}}<span class="valign deemphasize">[{{=entry.slot}}]</span> {{?}}<span class="valign">{{=entry.item}}</span>
 						{{?entry.scripName}}
-							<img src="http://static.inven.co.kr/image_2011/ff14/dataninfo/bell/{{=entry.scripIcon}}.png" class="suffix-icon" title="{{=entry.scripName}}">
+							<img src="./static-scriptIcon/{{=entry.scripIcon}}.png" class="suffix-icon" title="{{=entry.scripName}}">
 						{{??entry.reduce}}
-							<img src="http://static.inven.co.kr/image_2011/ff14/dataninfo/bell/Reduce.png" class="suffix-icon" title="Aetherial Reduction possible">
+							<img src="./static/Reduce.png" class="suffix-icon" title="Aetherial Reduction possible">
 						{{??entry.collectable}}
-							<img src="http://static.inven.co.kr/image_2011/ff14/dataninfo/bell/Collectable.png" class="suffix-icon" title="Collectable">
+							<img src="./static/Collectable.png" class="suffix-icon" title="Collectable">
 						{{?}}
 					</a>
 				{{~}}
@@ -164,13 +164,13 @@
 
 	<script id="fish-entry-template" type="text/x-dot-template">
 		<a class="entry">
-			<img src="http://static.inven.co.kr/image_2011/ff14/dataninfo/bell/{{=it.icon}}.png" class="icon">
+			<img src="./static-icon/{{=it.icon}}.png" class="icon">
 			<span class="valign">{{=it.name}}{{?it.predatorAmount}} [천적: {{=it.predatorAmount}}]{{?}}</span>
 
 			{{?it.scripName}}
-				<img src="http://static.inven.co.kr/image_2011/ff14/dataninfo/bell/{{=it.scripIcon}}.png" class="suffix-icon" title="{{=it.scripName}}">
+				<img src="./static-scripIcon/{{=it.scripIcon}}.png" class="suffix-icon" title="{{=it.scripName}}">
 			{{??it.reduce}}
-				<img src="http://static.inven.co.kr/image_2011/ff14/dataninfo/bell/Reduce.png" class="suffix-icon" title="Aetherial Reduction possible">
+				<img src="./static/Reduce.png" class="suffix-icon" title="Aetherial Reduction possible">
 			{{?}}
 		</a>
 
@@ -181,7 +181,7 @@
 				{{??token.arrow}}
 					<span class="valign">&#8594;</span> 
 				{{??}}
-					<img src="http://static.inven.co.kr/image_2011/ff14/dataninfo/bell/{{=token.icon}}.png" class="icon" title="{{=token.name}}{{?token.mooch}} (생미끼){{?}}">
+					<img src="./static-icon/{{=token.icon}}.png" class="icon" title="{{=token.name}}{{?token.mooch}} (생미끼){{?}}">
 				{{?}}
 			{{~}}
 		</div>
@@ -234,7 +234,7 @@
 
 	<script id="hunt-content-template" type="text/x-dot-template">
 		<span class="entry">
-			<img src="http://static.inven.co.kr/image_2011/ff14/dataninfo/bell/{{=it.def.name}}.png" class="icon">
+			<img src="./static-name/{{=it.def.name}}.png" class="icon">
 			<span class="valign">{{=it.def.namek}}</span>
 		</span>
 
