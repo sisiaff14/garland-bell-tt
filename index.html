@@ -88,6 +88,7 @@
 			<div data-filter=".miner" data-invert="0" class="active filter button"><img src="./static/MIN-Transparent.png">광부</div>
 			<div data-filter=".botanist" data-invert="0" class="active filter button"><img src="./static/BTN-Transparent.png">원예가</div>
 			<div data-filter=".fish" data-invert="0" class="active filter button"><img src="./static/FIS-Transparent.png">어부</div>
+			<div data-filter=".triple-triad" data-invert="0" class="active filter button"><img src="./static/FIS-Transparent.png">카드 NPC</div>
 			<div class="subheader">기타</div>
 			<div data-filter=".GATE" data-invert="0" class="filter button"><img src="./static/GATE.png">골드소서</div>
 			<div data-filter=".hunt" data-invert="0" class="active filter button"><img src="./static/Hunt.png">마물사냥</div>
@@ -152,7 +153,9 @@
 
 				<div class="info deemphasize">
 					<div class="zone-time"><span class="zone">{{=it.node.zone}} ({{=it.node.coords[0]}}, {{=it.node.coords[1]}})</span> @ <span class="times">{{=it.timeText}}</span></div>
-					<div class="type">Lv. {{=it.node.lvl}} {{=gt.util.stars(it.node.stars)}} {{=it.node.name}} {{=it.node.type}}</div>
+					{{?it.node.lvl}}
+					        <div class="type">Lv. {{=it.node.lvl}} {{=gt.util.stars(it.node.stars)}} {{=it.node.name}} {{=it.node.type}}</div>
+					{{?}}
 					{{?it.node.condition}}
 						<div class="condition">{{=it.node.condition}} &#8594; {{=it.node.bonus}}</div>
 					{{?}}

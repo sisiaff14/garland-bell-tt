@@ -832,7 +832,9 @@ gt.timer.node = function(now, def) {
 	this.template = gt.bell.nodeTemplate;
 	this.hasTimer = true;
 
-	if (def.type == '성목' || def.type == '약초밭')
+	if (def.type == '카드 NPC')
+		this.requiredClass = 'triple-triad';
+	else if (def.type == '성목' || def.type == '약초밭')
 		this.requiredClass = 'botanist';
 	else
 		this.requiredClass = 'miner';
@@ -877,6 +879,8 @@ gt.timer.node.prototype.next = function(now) {
 gt.timer.node.prototype.notify = function() {
 	var stars = this.node.stars ? (' ' + gt.util.repeat('*', this.node.stars)) : '';
 	var title = 'Lv. ' + this.node.lvl + stars + ' ' + this.area;
+	if (this.node.lvl === 0)
+		title = this.area;
 	var items = _.map(this.node.items, function(i) { return (i.slot ? '[' + i.slot + '] ' : '') + i.item; });
 	var n = new window.Notification(title, {
 		icon: '/db/icons/item/' + this.node.items[0].icon + '.png',
